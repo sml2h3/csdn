@@ -1,0 +1,1 @@
+手机号为:{{ $phone }}的用户,欢迎您加入天津工业大学CSDN俱乐部,以下为您的账户的激活链接:<a href="http://csdn.gs/user/verfy/{{ $link }}">激活链接</a>
