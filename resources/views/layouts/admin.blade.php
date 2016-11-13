@@ -13,8 +13,8 @@
     <!--<link rel="stylesheet" href="http://fonts.useso.com/css?family=Arimo:400,700,400italic">-->
     <link rel="stylesheet" href="{{ asset('assets/css/fonts/linecons/css/linecons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fonts/fontawesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/xenon-core.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/xenon-core.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/xenon-forms.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/xenon-components.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/xenon-skins.css') }}">
@@ -47,7 +47,7 @@
                 <div class="user-info">
 
                     <div class="user-image">
-                        <a href="extra-profile.html">
+                        <a href="#">
                             <img src="{{ asset('assets/images/user-2.png') }}" class="img-responsive img-circle" />
                         </a>
                     </div>
@@ -55,7 +55,7 @@
                     <div class="user-details">
 
                         <h3>
-                            <a href="extra-profile.html">John Smith</a>
+                            <a href="#">John Smith</a>
 
                             <!-- Available statuses: is-online, is-idle, is-busy and is-offline -->
                             <span class="user-status is-online"></span>
@@ -64,8 +64,8 @@
                         <p class="user-title">Web Developer</p>
 
                         <div class="user-links">
-                            <a href="extra-profile.html" class="btn btn-primary">Edit Profile</a>
-                            <a href="extra-profile.html" class="btn btn-success">Upgrade</a>
+                            <a href="#" class="btn btn-primary">Edit Profile</a>
+                            <a href="#" class="btn btn-success">Upgrade</a>
                         </div>
 
                     </div>
@@ -157,11 +157,11 @@
 
                 <!-- logo -->
                 <div class="logo">
-                    <a href="dashboard-1.html" class="logo-expanded">
+                    <a href="{{ asset('admin/main') }}" class="logo-expanded">
                         <img src="{{ asset('assets/images/logo@2x.png') }}" width="80" alt="" />
                     </a>
 
-                    <a href="dashboard-1.html" class="logo-collapsed">
+                    <a href="{{ asset('admin/main') }}" class="logo-collapsed">
                         <img src="{{ asset('assets/images/logo-collapsed@2x.png') }}" width="40" alt="" />
                     </a>
                 </div>
@@ -354,7 +354,7 @@
                         </li>
 
                         <li class="external">
-                            <a href="blank-sidebar.html">
+                            <a href="#">
                                 <span>All Messages</span>
                                 <i class="fa-link-ext"></i>
                             </a>
@@ -502,25 +502,25 @@
 
                     <ul class="dropdown-menu user-profile-menu list-unstyled">
                         <li>
-                            <a href="#edit-profile">
+                            <a href="#">
                                 <i class="fa-edit"></i>
                                 New Post
                             </a>
                         </li>
                         <li>
-                            <a href="#settings">
+                            <a href="#">
                                 <i class="fa-wrench"></i>
                                 Settings
                             </a>
                         </li>
                         <li>
-                            <a href="#profile">
+                            <a href="#">
                                 <i class="fa-user"></i>
                                 Profile
                             </a>
                         </li>
                         <li>
-                            <a href="#help">
+                            <a href="#">
                                 <i class="fa-info"></i>
                                 Help
                             </a>
@@ -543,7 +543,7 @@
             </ul>
 
         </nav>
-        @yield('contain')
+        @yield('content')
         <!-- Main Footer -->
         <!-- Choose between footer styles: "footer-type-1" or "footer-type-2" -->
         <!-- Add class "sticky" to  always stick the footer to the end of page (if page contents is small) -->

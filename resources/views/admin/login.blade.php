@@ -14,7 +14,7 @@
 <body>
 <article class="htmleaf-container">
     <div class="panel-lite">
-        <form action="admin/login" method="post">
+        <form action="{{ asset('admin/login') }}" method="post">
             {{ csrf_field() }}
         <div class="thumbur">
             <div class="icon-lock"></div>
@@ -22,7 +22,7 @@
         <h4>用户登录</h4>
         <div class="form-group">
             <input required="required" class="form-control" name="username"/>
-            <label class="form-label">用户名    </label>
+            <label class="form-label">用户名</label>
         </div>
         <div class="form-group">
             <input type="password" required="required" class="form-control" name="password"/>

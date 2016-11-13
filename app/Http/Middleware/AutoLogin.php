@@ -3,9 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Crypt;
 use App\Http\Model\Admin;
-class AdminUser
+use Illuminate\Support\Facades\Crypt;
+class AutoLogin
 {
     /**
      * Handle an incoming request.
@@ -16,18 +16,15 @@ class AdminUser
      */
     public function handle($request, Closure $next)
     {
-        if (session('username')==null || session('token') == null){
-            return redirect('index');
-        }else{
-            $username = session('username');
-            $token = session('token');
+        $username = session('username');
+        $token = session('token');
+        if ($username != "" && $token != ""){
+            $pass = base64_decode($token);
             $result = Admin::where("admin_username",$username)->first();
             if ($result){
-                if (base64_decode($token) != $result->admin_password){
-                    return redirect('index');
+                if (Crypt::decrypt($result['admin_password']) == Crypt::decrypt($pass)){
+                    return redirect('admin/main');
                 }
-            }else{
-                return redirect('index');
             }
         }
         return $next($request);

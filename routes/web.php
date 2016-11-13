@@ -10,6 +10,9 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::get('serve',function(){
+   return $_SERVER;
+});
 Route::get('/', function () {
     return view('home.index');
 });
@@ -41,7 +44,11 @@ Route::group(['prefix'=>'admin','middleware' => 'web'],function(){
     //admin layouts
     Route::post("login","Admin\UserController@login");
 });
-Route::group(['prefix'=>'admin'],function(){
-    //admin layouts
+Route::group(['prefix'=>'admin','middleware'=>'verfy'],function(){
+    //admin layouts had login
     Route::get('main',"Admin\LayoutsController@main");
+    Route::get('syset','Admin\LayoutsController@syset');
+});
+Route::group(['prefix'=>'admin','middleware'=>'adminapi'],function (){
+    Route::post('syset/action',"Admin\SetController@set");
 });

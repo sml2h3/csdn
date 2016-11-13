@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Model\Nav;
 use App\Http\Model\NavPer;
 use App\Http\Model\Admin;
+use App\Http\Model\System;
 class LayoutsController extends Controller
 {
     public $nav;
@@ -49,6 +50,13 @@ class LayoutsController extends Controller
     }
     public function main(){
 //        return $this->getnav();
-        return view('layouts.admin',['nav'=>$this->getnav()]);
+        return view('admin.main',['nav'=>$this->getnav()]);
+    }
+    public function syset(){
+        $result = System::all();
+        foreach ($result as $Id =>$content){
+            $arr[$content['name']] = $content['content'];
+        }
+        return view('admin.syset',['nav'=>$this->getnav(),'page'=>'syset','config'=>$arr]);
     }
 }
